@@ -1,7 +1,7 @@
 import Link from 'next/link'
 const Post = (props) => (
   <li>
-    <Link href={`/post?title=${props.title}`}>
+    <Link as={`/${props.slug}`} href={`/post?title=${props.title}`}>
       <a>{props.title}</a>
     </Link>
   </li>
@@ -11,9 +11,9 @@ export default () => (
     <h2>My blog</h2>
     <ul>
       <li>
-        <Post title="Yet another post" />
-        <Post title="Second post" />
-        <Post title="Hello, world!" />
+        <Post slug="yet-another-post" title="Yet another post" />
+        <Post slug="second-post" title="Second post" />
+        <Post slug="hello-world" title="Hello, world!" />
       </li>
     </ul>
   </div>
